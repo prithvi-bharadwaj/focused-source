@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pack-extension
+  cancel-in-progress: false
+
 jobs:
   pack:
     runs-on: ubuntu-latest
