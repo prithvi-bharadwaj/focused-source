@@ -18,6 +18,8 @@ test-results/
 *.pfx
 *.crx
 *.zip
+# The packed release build is intentionally tracked for direct download
+!focused.zip
 
 # Logs
 *.log

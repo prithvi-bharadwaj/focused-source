@@ -4,6 +4,43 @@ One click: understands your open tabs and sorts them into named Chrome tab group
 
 Works in Chrome, Brave, Edge, Arc, Vivaldi — any Chromium browser that supports Manifest V3 tab groups.
 
+## Try it in two minutes
+
+The easiest way to try Focused is the packed zip — no Node, no cloning, no build:
+
+1. **[Download focused.zip](https://github.com/prithvi-bharadwaj/focused-source/releases/latest/download/focused.zip)** (~200 KB) and unzip it. You'll get a `focused` folder — keep it somewhere permanent, since your browser loads the extension from it.
+2. Open `chrome://extensions` (or your browser's equivalent) and toggle on **Developer mode** in the top-right corner.
+3. Click **Load unpacked** and select the unzipped `focused` folder.
+4. Pin **Focused** from the puzzle-piece extensions menu, open it, and pick a provider in Settings — an OpenAI, Anthropic, or Gemini API key, or local Ollama if you want it fully local and free. See [Provider setup](#provider-setup).
+
+The same zip is also committed in this repo as [`focused.zip`](focused.zip). Prefer building it yourself? See [Install from source](#install-from-source).
+
+## Why I made this
+
+At any given moment I have somewhere between 20 and 40 tabs open. It got annoying — I was burning real time going back and forth working out which tab had what, where the audio was coming from, or where I'd saved that one thing I needed for later.
+
+Then I noticed I'd started leaving tabs open *on purpose*, as a sort of memory state — stuff to come back to later. So I was paying for that memory in navigation time, every single day. I wanted a fix I had full control over the UX of, which meant building it myself.
+
+The point isn't folder-by-domain sorting — Focused groups by *intent*. Ten Twitter tabs won't collapse into one "entertainment" pile: the research thread you had open goes to research, the self-improvement essay goes to self-improvement. Same site, different jobs, different groups.
+
+And you can just talk to it:
+
+- Forgot which hotel you liked? Describe it — mine was "the one under $200 a night" — and it finds the tab among twenty other hotel tabs.
+- Twenty LinkedIn profiles open for investor research and no memory of which name is which? Describe what you remember and it opens the right one.
+- Stash a whole task and get an AI "where you left off" brief when you resume it — or export your groups and drop the file into ChatGPT or Claude to see where your attention actually went.
+
+## Shaped by user feedback
+
+Everyone I showed this to said they needed it — and then told me what was broken. Each round of feedback shipped:
+
+- "I don't like the groups it made" → one-click undo, plus custom instructions so it follows your rules.
+- "My browser is eating RAM" → per-group loaded-tab counts, so you can see which group to stash or close.
+- "I have four windows open at once" and "I'm too lazy to click the button" → window merging and a tab-count auto-sort trigger both shipped too; I later removed them in a cleanup pass to keep the core a single predictable click.
+
+Around thirty people use it so far and I haven't posted about it anywhere yet. If you try it and something annoys you, [open an issue](https://github.com/prithvi-bharadwaj/focused-source/issues) — that's how everything above got here.
+
+Up next: a Chrome Web Store release, session memory so grouping gets better the more you use it, and a hosted option so an API key isn't required.
+
 ## Source availability
 
 Focused is **source-available, not open source**. This repository makes the extension auditable for privacy and security review and permits personal use and modifications within the license terms. The PolyForm Shield License prohibits using the software to provide a competing product.
@@ -42,7 +79,9 @@ Open the extension popup, choose the gear, then select a provider and model:
 
 Model lists are fetched live after provider settings are saved, with built-in fallbacks for hosted providers.
 
-## Install
+## Install from source
+
+If you'd rather build it yourself than use [the zip](#try-it-in-two-minutes):
 
 Prerequisites: Node `^20.19.0` or `>=22.12.0` and pnpm 10.
 
