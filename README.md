@@ -6,12 +6,16 @@ Works in Chrome, Brave, Edge, Arc, Vivaldi — any Chromium browser that support
 
 ## Try it in two minutes
 
-The easiest way to try Focused is the packed zip — no Node, no cloning, no build:
+The easiest way to try Focused is the packed zip — no Node, no cloning, no build. Click the link below to download the extension, then:
 
-1. **[Download focused.zip](https://github.com/prithvi-bharadwaj/focused-source/releases/latest/download/focused.zip)** (~200 KB) and unzip it. You'll get a `focused` folder — keep it somewhere permanent, since your browser loads the extension from it.
+1. **[Download focused.zip](https://github.com/prithvi-bharadwaj/focused-source/releases/latest/download/focused.zip)** (~200 KB) and **unzip it**. You'll get a `focused` folder — keep it somewhere permanent, since your browser loads the extension from it.
 2. Open `chrome://extensions` (or your browser's equivalent) and toggle on **Developer mode** in the top-right corner.
-3. Click **Load unpacked** and select the unzipped `focused` folder.
-4. Pin **Focused** from the puzzle-piece extensions menu, open it, and pick a provider in Settings — an OpenAI, Anthropic, or Gemini API key, or local Ollama if you want it fully local and free. See [Provider setup](#provider-setup).
+3. Click **Load unpacked** and select the unzipped `focused` folder. Focused now appears in your extensions list.
+4. **Pin it** so it stays next to your address bar: click the puzzle-piece icon in the toolbar, then the pin next to **Focused**.
+5. Open the Focused popup and click the **gear icon** to open Settings.
+6. Pick your provider — OpenAI, Anthropic, or Gemini with an API key, or local Ollama if you want it fully local and free — paste your API key, and click **Save**. (Where to create a key for each provider is in [Provider setup](#provider-setup).)
+
+Once settings are saved, the extension is ready — open the popup and hit **Organize tabs**.
 
 The same zip is also committed in this repo as [`focused.zip`](focused.zip). Prefer building it yourself? See [Install from source](#install-from-source).
 
