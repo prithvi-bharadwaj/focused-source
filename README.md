@@ -39,7 +39,7 @@ Everyone I showed this to said they needed it — and then told me what was brok
 
 - "I don't like the groups it made" → one-click undo, plus custom instructions so it follows your rules.
 - "My browser is eating RAM" → per-group loaded-tab counts, so you can see which group to stash or close.
-- "I have four windows open at once" and "I'm too lazy to click the button" → window merging and a tab-count auto-sort trigger both shipped too; they're temporarily out while I rework them and will be back.
+- "I have four windows open at once" and "I'm too lazy to click the button" → window merging shipped, was pulled for rework, and is back; the tab-count auto-sort trigger is still being reworked and will return.
 
 Around thirty people use it so far and I haven't posted about it anywhere yet. If you try it and something annoys you, [open an issue](https://github.com/prithvi-bharadwaj/focused-source/issues) — that's how everything above got here.
 
@@ -51,7 +51,7 @@ Up next: a Chrome Web Store release, session memory so grouping gets better the 
 - **Command bar** — create or extract a targeted group, move tabs into an existing group, rename or recolor a group, ungroup one or every group, remove duplicates, and merge related groups with natural-language prompts. It can also jump to a described tab or answer a question from your open tabs with a Go-to-tab button.
 - **Stash + resume briefs** — stash a whole group: its saveable web tabs close and Focused writes an AI "where you left off" brief (prices, options, what was still unchecked). Resume later to reopen those URLs as a fresh Chrome group — browser history, page and form state, and non-web tabs aren't restored. Unavailable in incognito because extension storage is shared.
 - **Hybrid context** — optionally reads a short page snippet when a title and URL are too ambiguous to classify. Declining page access still leaves title/URL organization fully usable.
-- **Quick actions** — ungroup everything, close duplicate URLs, or undo the last organize/ungroup/cleanup action from the popup.
+- **Quick actions** — ungroup everything, close duplicate URLs, merge every window into one, or undo the last organize/ungroup/cleanup action from the popup. Merging can also run automatically before each organize (optional).
 - **Duplicate protection** — keeps pinned tabs and the active tab, otherwise retaining the most recently accessed copy. Cleanup can run automatically before organization.
 - **Review mode** — inspect proposed groups and choose which ones to apply.
 - **Custom instructions** — save personal grouping and naming rules, such as keeping work and personal tabs in separate groups.
