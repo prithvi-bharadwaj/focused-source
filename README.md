@@ -9,7 +9,7 @@ Works in Chrome, Brave, Edge, Arc, Vivaldi — any Chromium browser that support
 The easiest way to try Focused is the packed zip — no Node, no cloning, no build. Click the link below to download the extension, then:
 
 1. **[Download focused.zip](https://github.com/prithvi-bharadwaj/focused-source/releases/latest/download/focused.zip)** (~200 KB) and **unzip it**. You'll get a `focused` folder — keep it somewhere permanent, since your browser loads the extension from it.
-2. Open `chrome://extensions` (or your browser's equivalent) and toggle on **Developer mode** in the top-right corner.
+2. Copy `chrome://extensions` into your address bar and press Enter (browsers don't allow it as a clickable link — or use Menu → Extensions → Manage Extensions), then toggle on **Developer mode** in the top-right corner.
 3. Click **Load unpacked** and select the unzipped `focused` folder. Focused now appears in your extensions list.
 4. **Pin it** so it stays next to your address bar: click the puzzle-piece icon in the toolbar, then the pin next to **Focused**.
 5. Open the Focused popup and click the **gear icon** to open Settings.
@@ -44,12 +44,6 @@ Everyone I showed this to said they needed it — and then told me what was brok
 Around thirty people use it so far and I haven't posted about it anywhere yet. If you try it and something annoys you, [open an issue](https://github.com/prithvi-bharadwaj/focused-source/issues) — that's how everything above got here.
 
 Up next: a Chrome Web Store release, session memory so grouping gets better the more you use it, and a hosted option so an API key isn't required.
-
-## Source availability
-
-Focused is **source-available, not open source**. This repository makes the extension auditable for privacy and security review and permits personal use and modifications within the license terms. The PolyForm Shield License prohibits using the software to provide a competing product.
-
-The Prithvi-owned portions are licensed under [PolyForm Shield 1.0.0](LICENSE). Some shadcn/ui-derived portions retain their upstream terms; see [Third-Party Notices](THIRD_PARTY_NOTICES.md). The snapshot's private-source lineage is recorded in [Provenance](PROVENANCE.md).
 
 ## Features
 
@@ -126,6 +120,12 @@ Stack: React 19, TypeScript, Tailwind v4, shadcn-style components, Radix primiti
 - Noncredential preferences use Chrome sync. Stashes and some recovery data are stored locally or for the browser session.
 
 See [Privacy](PRIVACY.md) for the exact data scopes, storage behavior, permissions, and incognito caveats verified against this source snapshot.
+
+## Source availability
+
+Focused is **source-available, not open source**. This repository makes the extension auditable for privacy and security review and permits personal use and modifications within the license terms. The PolyForm Shield License prohibits using the software to provide a competing product.
+
+The Prithvi-owned portions are licensed under [PolyForm Shield 1.0.0](LICENSE). Some shadcn/ui-derived portions retain their upstream terms; see [Third-Party Notices](THIRD_PARTY_NOTICES.md). The snapshot's private-source lineage is recorded in [Provenance](PROVENANCE.md).
 
 ## License
 
