@@ -1,27 +1,35 @@
 # Third-Party Notices
 
-Except for the third-party material identified below, Focused is licensed under the PolyForm Shield License 1.0.0 in `LICENSE`.
+Focused contains third-party material. Except for the material identified
+below, the Focused source is licensed under the PolyForm Shield License
+1.0.0. The identified material is excluded from the PolyForm Shield license
+and remains governed by the license stated in this file.
 
-Dependencies installed through `pnpm` retain their own upstream licenses and are not relicensed under PolyForm Shield. Neither `node_modules/` nor the generated `dist/` directory is included in this source repository.
+## shadcn/ui
 
-## shadcn/ui-derived code
+Focused incorporates and adapts source code from
+[shadcn/ui](https://github.com/shadcn-ui/ui/tree/fa4872c8ed948c111884e52ae23a649e83591b71).
 
-The following files or portions contain code adapted from [shadcn/ui](https://github.com/shadcn-ui/ui):
+The following scopes, including Focused modifications within those scopes,
+are licensed under the MIT License reproduced below and are not licensed
+under PolyForm Shield:
 
-- `src/lib/utils.ts`
-- `src/components/ui/button.tsx`
-- `src/components/ui/checkbox.tsx`
-- `src/components/ui/input.tsx`
-- `src/components/ui/label.tsx`
-- `src/components/ui/select.tsx`
-- `src/components/ui/switch.tsx`
-- The initial Tailwind theme and color-token declarations in `src/styles/globals.css`, currently lines 1–64
-
-Those identified portions remain available under the following MIT License and are not subject to PolyForm Shield:
+- `src/lib/utils.ts` — entire file.
+- `src/components/ui/button.tsx` — entire file.
+- `src/components/ui/checkbox.tsx` — entire file.
+- `src/components/ui/input.tsx` — entire file.
+- `src/components/ui/label.tsx` — entire file.
+- `src/components/ui/select.tsx` — entire file.
+- `src/components/ui/switch.tsx` — entire file.
+- `src/styles/globals.css` — the opening theme/token section, beginning with
+  `@import "tailwindcss";` and ending with the closing brace of
+  `@theme inline` (lines 1–64 at source commit
+  `57c284ed6e522ea489a348eb6955af613b53d6d8`).
 
 MIT License
 
 Copyright (c) 2023 shadcn
+Copyright (c) 2026 Prithvi B (modifications)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -40,3 +48,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Runtime dependencies
+
+Focused uses third-party npm packages listed in `package.json` and locked by
+`pnpm-lock.yaml`. Those packages are not relicensed under PolyForm Shield. A
+built distribution must retain the copyright notices and license texts
+required by the packages whose code it contains.
+
+At source commit `57c284ed6e522ea489a348eb6955af613b53d6d8`, the
+frozen production installation contains 53 packages: 50 MIT, one Apache-2.0
+(`class-variance-authority@0.7.1`), one ISC
+(`lucide-react@0.525.0`), and one 0BSD (`tslib@2.8.1`). No copyleft,
+noncommercial, or other source-available dependency license was found. No
+dependency in that installation ships a separate `NOTICE` file.
+
+This summary does not replace the complete upstream license texts required
+for any packaged or bundled distribution.
