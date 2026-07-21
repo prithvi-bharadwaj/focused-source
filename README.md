@@ -35,7 +35,7 @@ Everyone I showed this to said they needed it — and then told me what was brok
 
 - "I don't like the groups it made" → one-click undo, plus custom instructions so it follows your rules.
 - "My browser is eating RAM" → per-group loaded-tab counts, so you can see which group to stash or close.
-- "I have four windows open at once" and "I'm too lazy to click the button" → window merging and a tab-count auto-sort trigger both shipped too; I later removed them in a cleanup pass to keep the core a single predictable click.
+- "I have four windows open at once" and "I'm too lazy to click the button" → window merging and a tab-count auto-sort trigger both shipped too; they're temporarily out while I rework them and will be back.
 
 Around thirty people use it so far and I haven't posted about it anywhere yet. If you try it and something annoys you, [open an issue](https://github.com/prithvi-bharadwaj/focused-source/issues) — that's how everything above got here.
 
