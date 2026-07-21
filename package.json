@@ -2,8 +2,13 @@
   "name": "focused",
   "private": true,
   "version": "0.4.0",
+  "description": "Privacy-auditable source for Focused, licensed under PolyForm Shield 1.0.0.",
   "license": "PolyForm-Shield-1.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prithvi-bharadwaj/focused-source.git"
+  },
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc --noEmit && vite build",

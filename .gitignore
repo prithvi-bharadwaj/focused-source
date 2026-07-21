@@ -1,7 +1,36 @@
+# Dependencies and generated output
 node_modules/
 dist/
+coverage/
+.vite/
+.cache/
+test-results/
+*.tsbuildinfo
+
+# Environment files, credentials, and packaged extensions
+.env
+.env.*
+!.env.example
 *.local
+*.pem
+*.key
+*.p12
+*.pfx
+*.crx
+*.zip
+
+# Logs
+*.log
+pnpm-debug.log*
+
+# OS and editor files
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Private agent and workspace metadata
+.context/
 skill-runs.jsonl
 .claude/
 .gstack/
