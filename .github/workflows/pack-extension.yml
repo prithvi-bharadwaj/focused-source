@@ -1,0 +1,73 @@
+name: Pack extension zip
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "public/**"
+      - "*.html"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "vite.config.ts"
+      - "tsconfig.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm check
+
+      - name: Pack focused.zip
+        # Fixed mtimes + sorted entries + -X keep the zip byte-identical
+        # when dist content hasn't changed, so no-op builds commit nothing.
+        run: |
+          rm -rf pack focused.zip
+          mkdir pack
+          cp -R dist pack/focused
+          find pack/focused -exec touch -t 202601010000 {} +
+          (cd pack && find focused -type f | sort | zip -X ../focused.zip -@)
+
+      - name: Commit refreshed zip
+        run: |
+          if git diff --quiet -- focused.zip; then
+            echo "focused.zip unchanged; skipping commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add focused.zip
+            git commit -m "chore: refresh packed focused.zip [skip ci]"
+            git push
+          fi
+
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            gh release upload "$VERSION" focused.zip --clobber
+          else
+            gh release create "$VERSION" focused.zip \
+              --title "Focused $VERSION" \
+              --notes "Packed production build of the Focused extension.
+
+          **Install:** download \`focused.zip\`, unzip it, open \`chrome://extensions\`, enable **Developer mode**, click **Load unpacked**, and select the unzipped \`focused\` folder. Keep the folder around — your browser loads the extension from it.
+
+          Then open the popup and pick a provider in Settings (OpenAI / Anthropic / Gemini API key, or local Ollama for fully-local use)."
+          fi
